@@ -1,0 +1,25 @@
+# Environment variables (contains real credentials)
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Logs (auto-generated at runtime, don't need to be in the repo)
+violations.txt
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor/IDE folders
+.vscode/
+.idea/
