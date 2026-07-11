@@ -41,17 +41,20 @@ import time
 import atexit
 import signal
 from datetime import datetime
+from dotenv import load_dotenv
 
 # ---------------------------------------------------------------------------
 # APP CONFIGURATION
 # ---------------------------------------------------------------------------
+load_dotenv()
+
 app = Flask(__name__)
-app.secret_key = 'examguard-secret-key-2024'
+app.secret_key = os.environ.get('EXAMGUARD_SECRET_KEY', 'dev-fallback-key-change-me')
 
 socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading')
 
-USERNAME = 'admin'
-PASSWORD = '1234'
+USERNAME = os.environ.get('EXAMGUARD_USERNAME', 'admin')
+PASSWORD = os.environ.get('EXAMGUARD_PASSWORD', 'changeme')
 
 BLOCKED_SITES = [
     "chatgpt.com",
